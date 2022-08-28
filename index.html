@@ -41,45 +41,39 @@ function trigger_beep() {
 }
 </script>
       </script>
-
 <script>
 
-var init_countdown_to_new_request = 11;
+	init_page = "rnp";
+	init_calc_func = "resultNew";
+	init_page_title = "{{n}} Random Numbers between {{l}} - {{h}}";
+	init_numbers = '1';
+	init_low = '1';
+	init_high = '1000';
+	init_unique = true;
+	init_oddeven = '';
+	init_csv = '';
+	init_order_matters = false;
+	init_sorted = false;
 
-//defaults
-var init_domain = "NUMGEN";
-var init_page = "rnp";
-var init_number_function = "";
-var init_page_title = "Number Generator";
-var init_usejs = false;
-var init_numtype = ""; //binary, hex, octal
-var init_numbers = 1;
-var init_low = 0;
-var init_high = 100;
-var init_lines = 5;
-var init_length = 6;
-var init_sides = 6;
-var init_range = "1-100";
-var init_from = "hex";
-var init_to = "decimal"; 
-var init_step = 1; 
-var init_unique = true;
-var init_oddeven = "";
-var init_order_matters = false;
-var init_sorted = false;
-var init_csv = "";
-var init_calc_func = "resultNew";
-var init_start = false;
-var init_oddqty = 0;
-var init_sets = "";
-var init_addfilters = "";
-var init_totals_only = false;
-var init_last_roll_only = false;
-var init_time_to_new_request = 0;
+	function pageReady(){
+		initPage();		
+	}	
+	
+	function addSetRNPClicked(){
 
-var init_true_seed = 434767000000;
-var init_r1 = "";
-
+		var n = $("#numbers").val(); 
+		var l = $("#low").val();
+		var h = $("#high").val();	
+		var lines = 1;
+		var unique = getBooleanValue($("#unique").val(), true);
+		var csv = $("#csv").val();	
+		var oddeven = getOddEven();
+		var oddqty = getOddQty();
+		var sorted = getBooleanValue($("#sorted").val(), false);
+		
+		window.location = "/randomnumbergenerator/combinations-generator#!lines="+lines+"&numbers="+n+"&low="+l+"&high="+h+"&sets=1-1-10"+ "&unique=" + unique + "&csv=" + csv + "&oddeven=" + oddeven + "&oddqty=" + oddqty+"&sorted="+sorted;
+	}
+	
 </script>
 </center>  
 </body>   
