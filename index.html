@@ -40,41 +40,11 @@ function trigger_beep() {
     sound.play();
 }
 </script>
-      </script>
-<script>
-
-	init_page = "rnp";
-	init_calc_func = "resultNew";
-	init_page_title = "{{n}} Random Numbers between {{l}} - {{h}}";
-	init_numbers = '1';
-	init_low = '1';
-	init_high = '1000';
-	init_unique = true;
-	init_oddeven = '';
-	init_csv = '';
-	init_order_matters = false;
-	init_sorted = false;
-
-	function pageReady(){
-		initPage();		
-	}	
-	
-	function addSetRNPClicked(){
-
-		var n = $("#numbers").val(); 
-		var l = $("#low").val();
-		var h = $("#high").val();	
-		var lines = 1;
-		var unique = getBooleanValue($("#unique").val(), true);
-		var csv = $("#csv").val();	
-		var oddeven = getOddEven();
-		var oddqty = getOddQty();
-		var sorted = getBooleanValue($("#sorted").val(), false);
-		
-		window.location = "/randomnumbergenerator/combinations-generator#!lines="+lines+"&numbers="+n+"&low="+l+"&high="+h+"&sets=1-1-10"+ "&unique=" + unique + "&csv=" + csv + "&oddeven=" + oddeven + "&oddqty=" + oddqty+"&sorted="+sorted;
-	}
-	
-</script>
+    <script src="https://randojs.com/1.0.0.js"></script>
+        <script>
+            function showRandomNumber(){
+                document.getElementById("myNumber").innerHTML = rando(5, 10);
+            }
 </center>  
 </body>   
 </html>  
